@@ -1,4 +1,5 @@
 CREATE DATABASE retail_project;
+\c retail_project_db;
 
 -- DDL para creación de tablas
 -- Tabla clientes
