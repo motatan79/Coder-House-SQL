@@ -1,7 +1,7 @@
 CREATE DATABASE retail_project_db;
 
 -- Conectarse a la nueva base de datos
-\c retail_project_db
+\c retail_project_db;
 
 -- DDL para creación de tablas
 -- Tabla clientes
