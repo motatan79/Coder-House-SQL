@@ -11,3 +11,6 @@ El proyecto consiste en la creación de una base de datos llamada retail_project
 foráneas, tipo de dato, etc. 
 
 Objetivo: Extraer inteligencia de negocio combinando múltiples tablas mediante JOINs, GROUP BY y HAVING.
+
+Para ejecutar el script por completo luego de descargar el archivo Pre_Entrega4_Moises_Pirela.sql, ejecutar el siguiente comando en PowerShell
+psql -U postgres -d postgres -f "$HOME\Downloads\Pre_Entrega4_Moises_Pirela.sql
