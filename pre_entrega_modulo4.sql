@@ -141,6 +141,20 @@ COMMIT;
 
 Rentabilidad por categoría: unir ventas, productos y categorias; mostrar nombre de categoría, unidades vendidas e ingreso total;
 filtrar por categorías que superen un umbral de ventas que vos definas.
+
+PROBLEMA DE NEGOCIO RESUELTO:
+	Considerando los valores de unidades vendidas se tiene mejor control del inventario en bodega, producto faltantes y productos sin movimiento. 
+	Además conocer cual es el producto que más se está vendiendo según la temporada (para el momento que se realiza la consulta a la base). 
+	De igual manera el calculo del ingreso total otorga al departamento de finanzas datos relacionados con los activos (monto que ingresa) 
+	que disponen para futuras compras, adquisiciones y negociaciones.
+
+
+DEFINICIÓN DEL UMBRAL DE VENTAS:
+    Se establece un umbral de ingresos superior a $150 para identificar las categorías con mayor contribución económica dentro del conjunto de ventas analizado.
+    En este ejemplo hipotético, el presupuesto anual de la empresa es calculado basándose en un valor del dólar de $15 y un ingreso total de $150 
+	representa aproximadamente el 1% del presupuesto anual, lo que indica que las categorías que superan este umbral son significativas para la rentabilidad del negocio. 
+    Este criterio permite focalizar el análisis en las categorías que superan un nivel mínimo de facturación, facilitando la identificación de
+	aquellas con mayor relevancia comercial.
 */
 SELECT 
 	UPPER(c.nombre) AS categoria
@@ -157,6 +171,11 @@ ORDER BY 3 DESC
 
 /*
 Clientes sin compras: usando LEFT JOIN o subconsulta, identificar clientes registrados que aún no realizaron ninguna compra.
+
+PROBLEMA DE NEGOCIO RESUELTO:
+	El conocimiento de la cartera de clientes (activos e inactivos) ayuda a mejorar la planificación de futuras promociones. Además
+	podría hacerse un estudio de los integrantes del grupo sin compra para establecer la relación, por ejemplo, de edad, zona geográfica,
+	estado civil, sexo, y así mejorar la oferta e interés en el producto de la empresa.
 */
 SELECT 
 		c.*
@@ -173,6 +192,11 @@ Pista: el producto que más veces compró sale con una subconsulta correlacionad
 como el ejemplo del producto más caro de cada categoría (unidad "Subconsultas y operadores de conjuntos", sección 2.4). 
 Para cada cliente, agrupá sus ventas por producto, ordená por la cantidad de compras (COUNT(*)) de mayor a menor y quedate con el primero (LIMIT 1).
 La última transacción sale con MAX(fecha).
+
+PROBLEMA DE NEGOCIO RESUELTO:
+	La identificación de los hábitos de compra y el nivel de actividad de cada cliente ayuda a mejorar las estrategias de fidelización, retención y
+	personalización de ofertas en el e-commerce. Además, la última transacción permite determinar qué tan recientemente interactuó comercialmente
+	con la tienda e identificar posibles clientes que han dejado de comprar.
 */
 
 SELECT
