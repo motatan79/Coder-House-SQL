@@ -160,6 +160,7 @@ Clientes sin compras: usando LEFT JOIN o subconsulta, identificar clientes regis
 */
 SELECT 
 		c.*
+		,COALESCE(v.id_cliente::text, 'Sin Compras') AS estado_compra
 FROM clientes c  
 LEFT JOIN ventas v ON c.id_cliente = v.id_cliente
 WHERE v.id_cliente IS NULL
